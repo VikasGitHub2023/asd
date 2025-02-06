@@ -3,12 +3,15 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="asd.TC12943_9630_12897_AOC_Report_Incident_confirmation_message_once_per_AOC">
+      <class name="asd.AocClearanceToolTC">
         <methods>
+          <include name="CancelAocFormManually"/>
+          <include name="AutomaticIncidentReportforQtyMismatch"/>
+          <include name="ReportAnIssueContinue"/>
           <include name="setup"/>
-          <include name="CancelAocForm"/>
+          <include name="PredefinedReasons"/>
         </methods>
-      </class> <!-- asd.TC12943_9630_12897_AOC_Report_Incident_confirmation_message_once_per_AOC -->
+      </class> <!-- asd.AocClearanceToolTC -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

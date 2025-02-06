@@ -26,7 +26,7 @@ public class AcManagementPage {
 		driver.manage().deleteAllCookies();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		//wait=new Wait<WebDriver>(driver, Duration.ofSeconds(60));
-		driver.get("https://hcprd.syncrm.com/4.4.0/index.html?companyCode=VikasSadasivan3_PK&appCode=4039&roomId=1001544");
+		driver.get("https://hcprd.syncrm.com/X9941/index.html?companyCode=QC23_PK&appCode=4039&roomId=1001544");
 		driver.manage().window().maximize();
 	}
 	 
@@ -44,7 +44,7 @@ public class AcManagementPage {
 		HomePageMethod hp=new HomePageMethod(driver);
 		AcMgtMethod am=new AcMgtMethod(driver);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-		sp.enterUserName("vikas@test.com");
+		sp.enterUserName("Jon@gmail.com");
 		sp.enterPassword("Newpassword123!");
 		sp.clickOnLogin();
 		//msg.CloseMessagePopUp();

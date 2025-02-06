@@ -51,9 +51,13 @@ public class ProductPageMethod extends BasePage{
 		    		  product.click();
 		    		  break;
 		    	  }
-		    	  //ss.takeScreenShot();
 		      }
-			}
+		    	  TakesScreenshot ts=(TakesScreenshot)driver;
+		  		File sourcefile=ts.getScreenshotAs(OutputType.FILE);
+		  		File targetfile=new File(System.getProperty("user.dir")+"\\screenshots\\SelectProducts.png");
+		  		sourcefile.renameTo(targetfile);
+		      }
+			
 	// this method is used to select product from order sample page
 	public void SelectProductOnOrderSample(String prod) throws InterruptedException {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
@@ -69,8 +73,11 @@ public class ProductPageMethod extends BasePage{
 		    		  product.click();
 		    		  break;
 		    	  }
-		    	  //ss.takeScreenShot();
 		      }
+		      TakesScreenshot ts=(TakesScreenshot)driver;
+		  		File sourcefile=ts.getScreenshotAs(OutputType.FILE);
+		  		File targetfile=new File(System.getProperty("user.dir")+"\\screenshots\\SelectProductOnOrderSample.png");
+		  		sourcefile.renameTo(targetfile);
 			}
 			
 	public void ClickMinusButton() {

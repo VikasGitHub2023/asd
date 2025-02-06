@@ -4,6 +4,8 @@
   <test thread-count="5" name="Test">
     <classes>
       <class name="asd.TC11844_AOC_Incident_Report_an_Issue_Continue"/>
+      <class name="asd.TC11855_9630_11059_Cancel_AOC_form_manually_created_report"/>
+      <class name="asd.TC12085_11178_11982_HCP_HCP_Portal_displaying_logout_message_Configured_logout_message"/>
       <class name="asd.TC11845_9630_11059_AOC_Incident_Select_predefined_reasons"/>
     </classes>
   </test> <!-- Test -->

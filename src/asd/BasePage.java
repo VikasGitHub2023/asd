@@ -1,11 +1,14 @@
 package asd;
 
 import java.io.File;
+import java.time.Duration;
 import java.util.Date;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
 
 
@@ -18,7 +21,6 @@ public class BasePage {
 	    PageFactory.initElements(driver,this);
 	}
 	
-	
 	public void takeScreenShot() {
 		TakesScreenshot ts=(TakesScreenshot)driver;
 		File sourcefile=ts.getScreenshotAs(OutputType.FILE);
@@ -30,4 +32,6 @@ public class BasePage {
 		  Date date= new Date();
 		return date.toString().replace("", "").replace(":", "_");
 	}
+	
+	
 }

@@ -40,8 +40,8 @@ public class AocClearanceToolTC {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 		LoginMethod sp=new LoginMethod(driver);
 		AocClearanaceToolMethod aoc=new AocClearanaceToolMethod(driver);
-		sp.enterUserName("Jon@gmail.com");
-		sp.enterPassword("Newpassword123!");
+		sp.enterUserName("anna.christie@synergistix.com");
+		sp.enterPassword("Imp0ssibl345");
 	    sp.clickOnLogin();
 		aoc.OpenAocFromTheSidPanel();
 	}
@@ -101,7 +101,7 @@ public class AocClearanceToolTC {
 		aoc.ClickOnMsgContinueBt();
 		aoc.SelectReasonDropDown("Late delivery");
 		aoc.SelectReasonDropDown("Product was expired");
-		aoc.SelectReasonDropDown("Duplicate shipment");
+		aoc.uploadFile();
 		aoc.CloseDropDown();
 		aoc.AddCommentOnIncidentReport("Test");
 		aoc.SubmitOnIncidentReport();

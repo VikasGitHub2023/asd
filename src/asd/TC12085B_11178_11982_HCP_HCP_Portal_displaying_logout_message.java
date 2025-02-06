@@ -11,7 +11,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class TC12085_11178_11982_HCP_HCP_Portal_displaying_logout_message {
+public class TC12085B_11178_11982_HCP_HCP_Portal_displaying_logout_message {
 	public WebDriver driver;
 	Wait <WebDriver> wait;
 
@@ -22,7 +22,7 @@ public void setup() {
 	driver.manage().deleteAllCookies();
 	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 	//wait=new Wait<WebDriver>(driver, Duration.ofSeconds(60));
-	driver.get("https://hcprd.syncrm.com/X9941/index.html?companyCode=QC23_PK&appCode=4039&roomId=1001544");
+	driver.get("https://hcprdqc.syncrm.com/4.6.0-beta/index.html?companyCode=FrancescaPiper_PK&appCode=4039&roomId=1001544");
 	driver.manage().window().maximize();
 }
  
@@ -31,13 +31,13 @@ public void tearDown()
 {
 	driver.quit();
 }
-	@Test//TC12085_11178_11982_HCP_HCP_Portal_displaying_logout_message
-	public void CancelAocForm() throws InterruptedException {
+	@Test//TC12085_11178_11982_HCP_HCP_Portal_displaying_logout_message_Default logout message 
+	public void  DefaultLogoutMessage () throws InterruptedException {
 	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 	LoginMethod sp=new LoginMethod(driver);
 	HomePageMethod hp=new HomePageMethod(driver);
-	sp.enterUserName("Jon@gmail.com");
-	sp.enterPassword("Newpassword123!");
+	sp.enterUserName("anna.christie@synergistix.com");
+	sp.enterPassword("Imp0ssibl345");
 	sp.clickOnLogin();
 	hp.optionMenu("Log Out");
 	hp.LogOutAlert();
@@ -46,4 +46,6 @@ public void tearDown()
 	String actualMessage=("You are now logged out.");
 	Assert.assertEquals(actualMessage, expectedMessage);
 	}
+	
+	
 }

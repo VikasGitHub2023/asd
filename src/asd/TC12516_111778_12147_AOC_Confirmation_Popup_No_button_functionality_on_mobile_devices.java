@@ -22,7 +22,7 @@ public void setup() {
 	driver.manage().deleteAllCookies();
 	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 	//wait=new Wait<WebDriver>(driver, Duration.ofSeconds(60));
-	driver.get("https://hcprd.syncrm.com/X9941/index.html?companyCode=QC23_PK&appCode=4039&roomId=1001544");
+	driver.get("https://hcprdqc.syncrm.com/4.6.0-beta/index.html?companyCode=FrancescaPiper_PK&appCode=4039&roomId=1001544");
 	driver.manage().window().maximize();
 }
  
@@ -36,8 +36,8 @@ public void tearDown()
 	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 	LoginMethod sp=new LoginMethod(driver);
 	AocClearanaceToolMethod aoc=new AocClearanaceToolMethod(driver);
-	sp.enterUserName("Jon@gmail.com");
-	sp.enterPassword("Newpassword123!");
+	sp.enterUserName("anna.christie@synergistix.com");
+	sp.enterPassword("Imp0ssibl345");
 	sp.clickOnLogin();
 	aoc.OpenAocFromTheSidPanel();
 	aoc.ClickOnReportAnIssue();
@@ -45,8 +45,15 @@ public void tearDown()
 	aoc.CancelOnIncidentReport();
 	String expectedMessage=driver.findElement(By.cssSelector("div.x-body-el.x-msgbox-body-el.x-dialog-body-el p")).getText();
 	System.out.println(expectedMessage);
-	//String actualMessage=("Your changes have not been saved. Would you like to continue?");
-	//Assert.assertEquals(actualMessage, expectedMessage);
 	Assert.assertEquals(expectedMessage, "Your changes have not been saved. Would you like to continue?");
   }
 }
+                          /*Given the user is logged into the RD Applications on mobile device
+							And the user navigates to the AOC Clearance Tool screen
+							And modifies data to make the screen dirty
+							When the user clicks on "Go Back" or "Close"
+							Then a confirmation message should appear with the text:
+  							"Your changes have not been saved. Do you like to continue? Yes or No"
+							And the user clicks on the "No" button
+							Then the confirmation message should close
+							And the application should navigate to the previous screen, e.g "Contacts"*/

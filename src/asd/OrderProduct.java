@@ -39,13 +39,13 @@ public class OrderProduct {
 		driver.quit();
 	}
 	
-	//@Test(priority=1)
+	@Test(priority=1)
     public void LogoPresentTest() {
     	boolean status=driver.findElement(By.cssSelector("div.MuiBox-root.css-9hfmsn")).isDisplayed();
     	Assert.assertEquals(status, true);
 	}
     
-    //@Test(priority=2)
+    @Test(priority=2)
     public void ClientLogoTest() {
     	String client=driver.findElement(By.cssSelector("p.MuiTypography-root.MuiTypography-body1.css-uq8v4k-MuiTypography-root")).getText();
     	System.out.println(client);
@@ -63,7 +63,7 @@ public class OrderProduct {
     	}
     
     
-   //@Test(priority=4)
+   @Test(priority=4)
     public void ReadLoginBlock() {
     	List<WebElement>Contents=driver.findElements(By.cssSelector("div.MuiCard-root.css-1842se1-MuiPaper-root-MuiCard-root"));
         for(WebElement Content: Contents) {
@@ -72,17 +72,16 @@ public class OrderProduct {
     	
     }
 	
-	//@Test(priority=3)
+	@Test(priority=5)
 	public void HcpPortalLogin() {
 		LoginMethod sp=new LoginMethod(driver);
-		ProductPageMethod pp=new ProductPageMethod(driver);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 		sp.enterUserName("Jon@gmail.com");
 		sp.enterPassword("Newpassword123!");
 		sp.clickOnLogin();
 		}
 	
-	//@Test(priority=4)
+	@Test(priority=6)
 	public void ProductOnOrderSamplePage() throws InterruptedException {
 		HomePageMethod hp=new HomePageMethod(driver);
 	    hp.optionMenu("Order Samples");
@@ -119,7 +118,7 @@ public class OrderProduct {
 		hp.LogOutAlert();
 		}
 	
-	@Test(priority=8)
+	//@Test(priority=8)
 	public void orderHistoryTest() throws InterruptedException {
 		LoginMethod sp=new LoginMethod(driver);
 		ProductPageMethod pp=new ProductPageMethod(driver);

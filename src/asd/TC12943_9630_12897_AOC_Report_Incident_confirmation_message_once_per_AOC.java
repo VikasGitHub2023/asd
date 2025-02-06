@@ -23,11 +23,11 @@ public void setup() {
 	driver.manage().deleteAllCookies();
 	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 	//wait=new Wait<WebDriver>(driver, Duration.ofSeconds(60));
-	driver.get("https://hcprd.syncrm.com/X9941/index.html?companyCode=QC23_PK&appCode=4039&roomId=1001544");
+	driver.get("https://hcprdqc.syncrm.com/4.6.0-beta/index.html?companyCode=FrancescaPiper_PK&appCode=4039&roomId=1001544");
 	driver.manage().window().maximize();
 }
  
-//@AfterClass
+@AfterClass
 public void tearDown()
 {
 	driver.quit();
@@ -37,8 +37,8 @@ public void tearDown()
 	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 	LoginMethod sp=new LoginMethod(driver);
 	AocClearanaceToolMethod aoc=new AocClearanaceToolMethod(driver);
-	sp.enterUserName("Jon@gmail.com");
-	sp.enterPassword("Newpassword123!");
+	sp.enterUserName("anna.christie@synergistix.com");
+	sp.enterPassword("Imp0ssibl345");
 	sp.clickOnLogin();
 	aoc.OpenAocFromTheSidPanel();
 	aoc.ClickOnReportAnIssue();
@@ -55,3 +55,19 @@ public void tearDown()
 	Assert.assertEquals(ExpectedTitle,ActualTitle);
 	}
 }
+    /*AOC-Report Incident - Display confirmation message once per AOC
+	Given the user is logged into the HCP Portal  
+	And the user opens the AOC Clearance Tool view  
+	And the user has an issue that needs to be reported
+	When the user clicks on the "Report An Issue " Button 
+	And the warning message has not been displayed for the current AOC
+	Then the warning message should be displayed
+	And the user must acknowledge the message by clicking the "Continue" button
+
+ 	AOC-Report Incident - Do not display the warning message again for the same AOC
+	Given the user is in the AOC Clearance Tool view  
+	And the user still has a problem that needs to be reported
+	And the user previously clicked on  "Report An Issue " and "Continue" at the time the message was displayed.
+	When the user clicks again on the "Report An Issue " Button 
+	Then the warning message should not appear
+	And the user is allowed to proceed without interruption*/
